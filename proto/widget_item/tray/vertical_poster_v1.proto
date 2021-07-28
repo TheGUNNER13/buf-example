@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package widget_item.tray;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/widget_item/tray";
+
+import "common/template.proto";
+import "widget_item/tray/common/poster.proto";
+
+message VerticalPosterV1 {
+    .common.Template template = 1;
+    message Data {
+        string Title = 1;
+        widget_item.tray.common.Poster poster = 2;
+    }
+}

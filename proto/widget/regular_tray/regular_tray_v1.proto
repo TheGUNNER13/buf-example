@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package widget.regular_tray;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/widget/regular_tray";
+
+import "common/template.proto";
+
+// widget item specific imports
+import "widget_item/tray/horizontal_poster_v1.proto";
+import "widget_item/tray/vertical_poster_v1.proto";
+
+message RegularTrayV1 {
+    .common.Template template = 1;
+    message Data {
+        string title = 1;
+    }
+}
+
+message WidgetItem {
+    oneof widget_data {
+        widget_item.tray.HorizontalPosterV1 horizontalPoster = 1;
+        widget_item.tray.VerticalPosterV1 verticalPoster = 2;
+    }
+}

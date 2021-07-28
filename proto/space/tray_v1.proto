@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package space;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/space";
+
+// widget type specific schema imports
+import "widget/regular_tray/regular_tray_v1.proto";
+import "widget/masthead/masthead_v1.proto";
+import "widget/cw/cw_v1.proto";
+
+message TraySpaceV1 {
+    repeated TraySpaceV1WidgetData widgets = 1;
+    string next_page_url = 2;
+}
+
+message TraySpaceV1WidgetData {
+    oneof widget_data {
+        widget.masthead.MastheadV1 masthead = 1;
+        widget.cw.CWV1 cw = 2;
+        widget.regular_tray.RegularTrayV1 regular_tray = 3;
+    }
+}

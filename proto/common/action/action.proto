@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package common.action;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/common/action";
+
+message ToPageNavigation {
+    string page_type = 1;
+    string page_url = 2;
+}
+
+message Navigation {
+    oneof navigation {
+        ToPageNavigation to_page_navigation = 1;
+    }
+}
+
+message Action {
+    message OnClick {
+        string type = 1;
+        oneof Data {
+            Navigation navigation = 2;
+        }
+    }
+}

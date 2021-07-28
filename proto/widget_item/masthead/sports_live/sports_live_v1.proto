@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package widget_item.masthead.sports_live;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/widget_item/masthead/sports_live";
+
+import "common/template.proto";
+
+message SportsLiveV1 {
+    .common.Template template = 1;
+    message Data {
+        string title = 2;
+        message Teams {
+            string team1 = 1;
+            string team2 = 2;
+        }
+        message Score {
+            int32 runs = 1;
+            int32 overs = 2;
+        }
+    }
+}

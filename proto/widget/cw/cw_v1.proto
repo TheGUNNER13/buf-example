@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package widget.cw;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/widget/cw";
+
+import "common/template.proto";
+
+// widget item specific imports
+import "widget_item/tray/horizontal_poster_v2.proto";
+
+message CWV1 {
+    .common.Template template = 1;
+    message Data {
+        bool show_time_remaining = 1;
+        repeated WidgetItem widget_items = 2;
+    }
+}
+
+message WidgetItem {
+    oneof widget_data {
+        widget_item.tray.HorizontalPosterV2 horizontalPoster = 1;
+    }
+}

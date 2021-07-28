@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package page;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/page";
+
+// spaces import
+import "space/menu_v1.proto";
+import "space/sub_menu_v1.proto";
+import "space/tray_v1.proto";
+
+message LandingPageV1 {
+    repeated LandingPageV1Spaces spaces = 1;
+}
+
+message LandingPageV1Spaces {
+    oneof spaces {
+        space.TraySpaceV1 tray_space_v1 = 1;
+        space.MenuSpaceV1 menu_space_v1 = 2;
+        space.SubMenuSpaceV1 sub_menu_space_v1 = 3;
+    }
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package widget.menu;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/widget/menu";
+
+import "common/template.proto";
+
+message SubMenuV1 {
+    .common.Template template = 1;
+}

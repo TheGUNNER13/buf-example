@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package widget.masthead;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/widget/masthead";
+
+import "common/template.proto";
+
+import "widget_item/masthead/content/content_v1.proto";
+import "widget_item/masthead/sports_live/sports_live_v1.proto";
+
+message MastheadV1 {
+    .common.Template template = 1;
+    message Data {
+        message Meta {
+            bool auto_scroll = 1;
+        }
+        repeated WidgetItem widget_items = 2;
+    }
+}
+
+message WidgetItem {
+    oneof widget_data {
+        widget_item.masthead.sports_live.SportsLiveV1 masthead = 2;
+        widget_item.masthead.content.ContentV1 content = 3;
+    }
+}

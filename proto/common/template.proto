@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package common;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/common";
+
+message Template {
+    string type = 1;
+    string version = 2;
+}

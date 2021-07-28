@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package api.v1.model;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/api/v1/model";
+
+import "page/landing_v1.proto";
+import "page/detail_v1.proto";
+
+message GetPageRequest {
+    string page_id = 1;
+}
+
+message GetPageResponse {
+    string id = 1;
+    oneof page_type {
+        page.LandingPageV1 landing_page = 2;
+        page.DetailPageV1 detail_page = 3;
+    }
+}

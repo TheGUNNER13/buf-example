@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package widget_item.masthead.content;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/widget_item/masthead/content";
+
+import "common/template.proto";
+
+message ContentV1 {
+    .common.Template template = 1;
+    message Data {
+        string title = 2;
+        string image_url = 3;
+    }
+}

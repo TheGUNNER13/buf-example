@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package space;
+option go_package = "github.com/hotstar/x-page-bff-protos/go/space";
+
+// widget type specific schema imports
+import "widget/menu/menu_v1.proto";
+
+message MenuSpaceV1 {
+    MenuSpaceV1WidgetData widgets = 1;
+}
+
+message MenuSpaceV1WidgetData {
+    widget.menu.MenuV1 menu_v1 = 1;
+}
