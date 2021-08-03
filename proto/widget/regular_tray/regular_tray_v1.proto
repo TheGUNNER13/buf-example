@@ -22,3 +22,5 @@ message WidgetItem {
         widget_item.tray.VerticalPosterV1 verticalPoster = 2;
     }
 }
+
+

@@ -10,12 +10,14 @@ import "widget_item/masthead/sports_live/sports_live_v1.proto";
 
 message MastheadV1 {
     .common.Template template = 1;
+    
     message Data {
         message Meta {
             bool auto_scroll = 1;
         }
         repeated WidgetItem widget_items = 2;
     }
+    Data data = 2;
 }
 
 message WidgetItem {

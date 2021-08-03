@@ -8,6 +8,7 @@ import "widget_item/tray/common/poster.proto";
 
 message HorizontalPosterV2 {
     .common.Template template = 1;
+    Data data = 2;
     message Data {
         string BigTitle = 1;        // breaking change from horizontal_poster_v1.proto
         widget_item.tray.common.Poster poster = 2;

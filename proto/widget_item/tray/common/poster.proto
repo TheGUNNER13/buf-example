@@ -3,7 +3,10 @@ syntax = "proto3";
 package widget_item.tray.common;
 option go_package = "github.com/hotstar/x-page-bff-protos/go/widget_item/tray/common";
 
+import "common/action/action.proto";
+
 message Poster {
     string image_url = 1;
     string dimensions = 2;
+    .common.action.Action action = 3;
 }

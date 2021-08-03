@@ -9,6 +9,7 @@ import "widget_item/tray/common/poster.proto";
 
 message HorizontalPosterV1 {
     .common.Template template = 1;
+    Data data = 2;
     message Data {
         string Title = 1;
         widget_item.tray.common.Poster poster = 2;

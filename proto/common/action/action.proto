@@ -15,6 +15,7 @@ message Navigation {
 }
 
 message Action {
+    OnClick on_click = 1;
     message OnClick {
         string type = 1;
         oneof Data {

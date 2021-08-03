@@ -10,6 +10,7 @@ import "widget_item/tray/horizontal_poster_v2.proto";
 
 message CWV1 {
     .common.Template template = 1;
+    Data data = 2;
     message Data {
         bool show_time_remaining = 1;
         repeated WidgetItem widget_items = 2;
